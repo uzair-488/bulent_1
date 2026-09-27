@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bulent Medicare | Patented Bio-Therapeutics</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            pharma: {
+              navy: '#051329',
+              deep: '#0B1E3B',
+              blue: '#0066CC',
+              cyan: '#00D2D3',
+              teal: '#059669',
+              light: '#F4F8FC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Continuous floating micro-animation for images */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(0.4deg); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(8px); }
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.3; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .animate-float {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+    .animate-float-reverse {
+      animation: floatReverse 6s ease-in-out infinite;
+    }
+    .pulse-badge {
+      animation: pulseRing 3s ease-in-out infinite;
+    }
+
+    /* Surgical Blueprint Grid Overlay */
+    .clinical-grid {
+      background-size: 36px 36px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 102, 204, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 102, 204, 0.04) 1px, transparent 1px);
+    }
+
+    /* Glass Effect */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 font-sans antialiased selection:bg-pharma-blue selection:text-white clinical-grid relative overflow-x-hidden">
+
+  <!-- ================= TOP CLINICAL BADGE BAR ================= -->
+  <div class="bg-pharma-navy text-slate-300 text-[11px] font-mono tracking-wider py-2 px-6 border-b border-slate-800 relative z-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-pharma-cyan font-semibold">
+          <span class="w-2 h-2 rounded-full bg-pharma-cyan animate-ping"></span>
+          PHARMACEUTICAL DISTRIBUTION LICENSE ACTIVE
+        </span>
+        <span class="hidden md:inline text-slate-600">/</span>
+        <span class="hidden md:inline">KALWA, THANE (MH 400605)</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>DIRECT CLINICAL DESK:</span>
+        <a href="tel:9960824798" class="text-white font-bold hover:text-pharma-cyan transition">+91 9960824798</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING MEDICAL HEADER ================= -->
+  <header class="sticky top-3 z-50 max-w-7xl mx-auto px-4">
+    <nav class="glass-nav border border-slate-200/90 rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-lg shadow-slate-200/40">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pharma-navy to-pharma-blue flex items-center justify-center text-white shadow-md shadow-blue-500/30">
+          <svg class="w-6 h-6 text-pharma-cyan" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-display font-extrabold text-xl text-pharma-navy tracking-tight block leading-none">
+            BULENT<span class="text-pharma-blue">.</span>MEDICARE
+          </span>
+          <span class="text-[9px] font-mono uppercase tracking-widest text-slate-400 font-bold block mt-0.5">Patented Formulations</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-slate-600">
+        <a href="#overview" class="hover:text-pharma-blue transition">Overview</a>
+        <a href="#speciality" class="hover:text-pharma-blue transition">Therapeutics</a>
+        <a href="#pathology" class="hover:text-pharma-blue transition">The Fatigue Loop</a>
+        <a href="#products" class="hover:text-pharma-blue transition">Product Pipeline</a>
+        <a href="#contact" class="hover:text-pharma-blue transition">Clinical Desk</a>
+      </div>
+
+      <a href="#contact" class="px-5 py-2.5 rounded-xl bg-pharma-navy text-white text-xs font-bold uppercase tracking-wider hover:bg-pharma-blue transition-all shadow-md">
+        Inquire Formulations
+      </a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO SECTION WITH ANIMATED MEDICAL IMAGERY ================= -->
+  <section id="overview" class="pt-14 pb-20 max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Text content -->
+      <div class="lg:col-span-6 space-y-6" data-aos="fade-right" data-aos-duration="900">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-pharma-blue text-xs font-mono font-bold tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-pharma-blue animate-pulse"></span>
+          GLOBAL PHARMACEUTICAL EXCELLENCE
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-pharma-navy leading-[1.1] tracking-tight">
+          Patented Science.<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-pharma-blue via-cyan-600 to-pharma-teal">
+            Restored Equilibrium.
+          </span>
+        </h1>
+
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+          At Bulent Medicare, we don't just distribute medicine—we introduce patented formulations from international research hubs to solve the interconnected cycle of anxiety, circadian depletion, and reduced vitality.
+        </p>
+
+        <!-- Stats -->
+        <div class="pt-4 grid grid-cols-3 gap-4 border-t border-slate-200">
+          <div>
+            <div class="font-display text-2xl font-bold text-pharma-navy">100%</div>
+            <div class="text-[10px] font-mono uppercase text-slate-500 font-semibold">Patented APIs</div>
+          </div>
+          <div>
+            <div class="font-display text-2xl font-bold text-pharma-blue">High</div>
+            <div class="text-[10px] font-mono uppercase text-slate-500 font-semibold">Bioavailability</div>
+          </div>
+          <div>
+            <div class="font-display text-2xl font-bold text-emerald-600">Zero</div>
+            <div class="text-[10px] font-mono uppercase text-slate-500 font-semibold">Sedative Fog</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Animated Image Stack -->
+      <div class="lg:col-span-6 relative" data-aos="fade-left" data-aos-duration="1000">
+        
+        <!-- Glow Backing -->
+        <div class="absolute -inset-4 bg-gradient-to-r from-blue-400/20 via-cyan-400/20 to-teal-400/20 rounded-3xl blur-2xl opacity-60"></div>
+        
+        <div class="relative grid grid-cols-12 gap-4 items-center">
+          
+          <!-- Primary Doctor / Clinical Lab Image (Floats smoothly) -->
+          <div class="col-span-8 animate-float">
+            <div class="relative group rounded-3xl overflow-hidden border-2 border-white shadow-2xl bg-white">
+              <img 
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" 
+                alt="Doctor Analyzing Clinical Research" 
+                class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-pharma-navy/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span class="text-[10px] font-mono tracking-widest uppercase bg-pharma-blue/80 px-2 py-0.5 rounded backdrop-blur">Clinical Consultation</span>
+                <p class="font-bold text-sm mt-1">European Standard Quality Assurance</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Biotech Floating Specimen -->
+          <div class="col-span-4 space-y-4">
+            
+            <div class="animate-float-reverse rounded-2xl overflow-hidden border-2 border-white shadow-xl group bg-white">
+              <img 
+                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=500&q=80" 
+                alt="Pharmaceutical Lab Research" 
+                class="w-full h-40 object-cover transform group-hover:scale-110 transition duration-500"
+              />
+            </div>
+
+            <!-- Live Diagnostic Pulse Chip -->
+            <div class="bg-white/95 backdrop-blur p-4 rounded-2xl border border-slate-200 shadow-lg text-xs space-y-1">
+              <div class="flex items-center gap-2 text-emerald-600 font-bold">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-badge"></span>
+                API Purity Verified
+              </div>
+              <p class="text-[11px] text-slate-500">Molecular bio-absorption tested across international trials.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 3 CORE THERAPEUTIC PILLARS (WITH INTERACTIVE ANIMATED CARDS) ================= -->
+  <section id="speciality" class="py-20 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-pharma-blue font-mono text-xs uppercase tracking-widest font-bold">Therapeutic Vectors</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-pharma-navy mt-2">Targeted Molecular Formulations</h2>
+        <p class="text-slate-500 text-sm mt-3">Three synchronized clinical pathways developed to restore mind and physical performance.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Vector 1: Mental Equilibrium -->
+        <div class="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-pharma-blue hover:shadow-2xl transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=80" 
+              alt="Mental Equilibrium" 
+              class="w-full h-full object-cover transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-mono font-bold text-slate-800 uppercase">
+              Neuro-Stabilization
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display text-xl font-bold text-pharma-navy group-hover:text-pharma-blue transition">Mental Equilibrium</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Formulations calming chronic cognitive agitation and anxiety receptors without provoking mental drowsiness or executive brain fog.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-pharma-blue">
+              <span>Precision Molecules</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vector 2: Restorative Sleep -->
+        <div class="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-indigo-500 hover:shadow-2xl transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=700&q=80" 
+              alt="Restorative Circadian Sleep" 
+              class="w-full h-full object-cover transform group-hover:scale-110 group-hover:-rotate-1 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-mono font-bold text-indigo-700 uppercase">
+              Delta Wave Repair
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display text-xl font-bold text-pharma-navy group-hover:text-indigo-600 transition">Restorative Sleep</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Biologically mimetic compounds that recreate natural deep-sleep architectures, triggering rapid neurological detoxification.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-indigo-600">
+              <span>Circadian Reset</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vector 3: Sexual Vitality -->
+        <div class="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-rose-500 hover:shadow-2xl transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80" 
+              alt="Physical Stamina and Vitality" 
+              class="w-full h-full object-cover transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-mono font-bold text-rose-700 uppercase">
+              Endothelial Flow
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display text-xl font-bold text-pharma-navy group-hover:text-rose-600 transition">Sexual Vitality</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Enhances nitric oxide retention and micro-circulation, restoring physiological stamina and intimate self-assurance in men.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-rose-600">
+              <span>Vascular Recovery</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE INTERCONNECTED CYCLE (THE DISRUPTION LOOP) ================= -->
+  <section id="pathology" class="py-20 bg-pharma-navy text-white relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-pharma-cyan font-mono text-xs uppercase tracking-widest font-bold">Pathological Flow</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold mt-2">Breaking the Modern Exhaustion Loop</h2>
+        <p class="text-slate-400 text-sm mt-3">Anxiety, insomnia, and vitality collapse do not exist in isolation. They form a destructive feedback loop.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-pharma-deep/90 border border-slate-700 p-6 rounded-2xl hover:border-pharma-cyan transition group" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-pharma-cyan font-mono text-xs font-bold mb-2">NODE_01</div>
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-pharma-cyan transition">Anxiety & Cortisol</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Over-activated sympathetic nervous pathways saturate biological receptors.</p>
+          <div class="mt-4 text-2xl">⚡</div>
+        </div>
+
+        <div class="bg-pharma-deep/90 border border-slate-700 p-6 rounded-2xl hover:border-indigo-400 transition group" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-indigo-400 font-mono text-xs font-bold mb-2">NODE_02</div>
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-indigo-400 transition">Sleep Deprivation</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Fragmented REM stops nighttime hormone calibration and mental regeneration.</p>
+          <div class="mt-4 text-2xl">🌙</div>
+        </div>
+
+        <div class="bg-pharma-deep/90 border border-slate-700 p-6 rounded-2xl hover:border-teal-400 transition group" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-teal-400 font-mono text-xs font-bold mb-2">NODE_03</div>
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-teal-400 transition">Neuro-Depression</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Dopamine and serotonin exhaustion leads to anhedonia and mental haze.</p>
+          <div class="mt-4 text-2xl">📉</div>
+        </div>
+
+        <div class="bg-pharma-deep/90 border border-slate-700 p-6 rounded-2xl hover:border-rose-400 transition group" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-rose-400 font-mono text-xs font-bold mb-2">NODE_04</div>
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-rose-400 transition">Reduced Vitality</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Loss of intimate health and metabolic fatigue feeds back into high anxiety.</p>
+          <div class="mt-4 text-2xl">🥀</div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center" data-aos="zoom-in">
+        <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-pharma-blue/20 border border-pharma-blue/40 text-xs font-mono text-slate-200">
+          <span class="text-pharma-cyan font-bold">BULENT PROTOCOL:</span> Directly targets all four nodes with high-bioavailability patented molecules.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ACTUAL BULENT PRODUCTS SHOWCASE (WITH PRODUCT IMAGES) ================= -->
+  <section id="products" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <span class="text-pharma-blue font-mono text-xs uppercase tracking-widest font-bold">Catalog Showcase</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-pharma-navy mt-2">Patented Formulations In Pipeline</h2>
+      <p class="text-slate-500 text-sm mt-3">Clinically evaluated patented compounds distributed by Bulent Medicare across certified healthcare channels.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Product 1: Bipnox -->
+      <div class="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-md hover:shadow-2xl transition duration-500 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <!-- Product image with hover float -->
+          <div class="relative h-60 rounded-2xl overflow-hidden bg-slate-50 mb-6 flex items-center justify-center p-4">
+            <img 
+              src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" 
+              alt="Bipnox Therapeutic Packaging" 
+              class="h-full object-contain transform group-hover:scale-110 group-hover:-translate-y-2 transition duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-pharma-navy text-white text-[10px] font-mono px-2.5 py-0.5 rounded-full font-bold">
+              DOUBLE PATENTED
+            </span>
+          </div>
+
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-display text-2xl font-black text-pharma-navy group-hover:text-pharma-blue transition">Bipnox</h3>
+            <span class="text-xs font-mono font-bold text-pharma-blue bg-blue-50 px-2 py-0.5 rounded">Rx Grade</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4 font-medium">Globally tested clinically proven formula for male performance & cellular motility.</p>
+          
+          <ul class="text-xs space-y-2 text-slate-600 font-medium">
+            <li class="flex items-center gap-2">✓ Enhances Libido & Male Endurance</li>
+            <li class="flex items-center gap-2">✓ Supports Healthy Sperm Motility & Quality</li>
+            <li class="flex items-center gap-2">✓ European Formulation Standard</li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="mt-6 block text-center py-3 rounded-xl border border-pharma-navy text-pharma-navy hover:bg-pharma-navy hover:text-white transition text-xs font-bold uppercase tracking-wider">
+          Request Inquiries
+        </a>
+      </div>
+
+      <!-- Product 2: Stamint -->
+      <div class="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-md hover:shadow-2xl transition duration-500 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="relative h-60 rounded-2xl overflow-hidden bg-slate-50 mb-6 flex items-center justify-center p-4">
+            <img 
+              src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=80" 
+              alt="Stamint Bio-active Formulation" 
+              class="h-full object-contain transform group-hover:scale-110 group-hover:-translate-y-2 transition duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-mono px-2.5 py-0.5 rounded-full font-bold">
+              VASO-ACTIVE
+            </span>
+          </div>
+
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-display text-2xl font-black text-pharma-navy group-hover:text-emerald-600 transition">Stamint</h3>
+            <span class="text-xs font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Vigor API</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4 font-medium">Patented & clinically evaluated formula for premature timing & hormone calibration.</p>
+          
+          <ul class="text-xs space-y-2 text-slate-600 font-medium">
+            <li class="flex items-center gap-2">✓ Increases Dopamine & Serotonin Levels</li>
+            <li class="flex items-center gap-2">✓ Elevates Nitric Oxide Levels for Vascular Tone</li>
+            <li class="flex items-center gap-2">✓ Enhances Natural Testosterone Pathways</li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="mt-6 block text-center py-3 rounded-xl border border-pharma-navy text-pharma-navy hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition text-xs font-bold uppercase tracking-wider">
+          Request Inquiries
+        </a>
+      </div>
+
+      <!-- Product 3: Slipanx -->
+      <div class="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-md hover:shadow-2xl transition duration-500 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+        <div>
+          <div class="relative h-60 rounded-2xl overflow-hidden bg-slate-50 mb-6 flex items-center justify-center p-4">
+            <img 
+              src="https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&w=600&q=80" 
+              alt="Slipanx Sleep & Relaxation API" 
+              class="h-full object-contain transform group-hover:scale-110 group-hover:-translate-y-2 transition duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-mono px-2.5 py-0.5 rounded-full font-bold">
+              NEURO-CALM
+            </span>
+          </div>
+
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-display text-2xl font-black text-pharma-navy group-hover:text-indigo-600 transition">Slipanx</h3>
+            <span class="text-xs font-mono font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Circadian</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4 font-medium">Patented neuro-relaxation compound engineered for deep restorative sleep.</p>
+          
+          <ul class="text-xs space-y-2 text-slate-600 font-medium">
+            <li class="flex items-center gap-2">✓ Optimizes Deep Stage Sleep Architecture</li>
+            <li class="flex items-center gap-2">✓ Sustained Daily Stress Management</li>
+            <li class="flex items-center gap-2">✓ Enhances Daytime Focus & Memory Clarity</li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="mt-6 block text-center py-3 rounded-xl border border-pharma-navy text-pharma-navy hover:bg-indigo-600 hover:border-indigo-600 hover:text-white transition text-xs font-bold uppercase tracking-wider">
+          Request Inquiries
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CLINICAL FOOTER WITH LOCATION DETAILS ================= -->
+  <footer id="contact" class="bg-pharma-navy text-slate-400 text-xs py-16">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10">
+      
+      <!-- Brand & Info -->
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-pharma-blue flex items-center justify-center text-white font-bold">
+            +
+          </div>
+          <span class="font-display font-black text-xl text-white tracking-tight">BULENT MEDICARE</span>
+        </div>
+        <p class="text-slate-400 max-w-sm leading-relaxed text-xs">
+          Bringing global pharmaceutical excellence to personal wellness through patented therapeutics. Addressing the critical intersection of sexual health and mental balance.
+        </p>
+        <p class="text-[11px] font-mono text-slate-500">
+          REGISTERED OFFICE: Shree Darshan, 03, Shastri Nagar, Manisha Nagar, Kalwa, Thane, Maharashtra 400605.
+        </p>
+      </div>
+
+      <!-- Therapeutics Links -->
+      <div class="md:col-span-3 space-y-3 font-mono text-[11px]">
+        <h4 class="text-white font-bold uppercase tracking-wider">Formulation Portfolio</h4>
+        <ul class="space-y-2 text-slate-400">
+          <li><a href="#products" class="hover:text-pharma-cyan transition">Bipnox (Male Libido & Motility)</a></li>
+          <li><a href="#products" class="hover:text-pharma-cyan transition">Stamint (Timing & Testosterone)</a></li>
+          <li><a href="#products" class="hover:text-pharma-cyan transition">Slipanx (Sleep & Stress Relief)</a></li>
+          <li><a href="#speciality" class="hover:text-pharma-cyan transition">Patented European APIs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Dispatch -->
+      <div class="md:col-span-4 space-y-3 font-mono text-[11px]">
+        <h4 class="text-white font-bold uppercase tracking-wider">Distribution & Support Desk</h4>
+        <p>E: <a href="mailto:contact@bulentmedicare.com" class="text-pharma-cyan hover:underline">contact@bulentmedicare.com</a></p>
+        <p>T: +91 9960824798 / 9860168856</p>
+        
+        <div class="pt-4 flex gap-4 text-slate-400">
+          <a href="#" class="hover:text-white">INSTAGRAM</a>
+          <span>/</span>
+          <a href="#" class="hover:text-white">FACEBOOK</a>
+          <span>/</span>
+          <a href="#" class="hover:text-white">YOUTUBE</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 mt-14 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-mono text-slate-500">
+      <span>&copy; Bulent Medicare Pvt. Ltd. All rights reserved.</span>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-slate-300">PRIVACY POLICY</a>
+        <a href="#" class="hover:text-slate-300">TERMS & CONDITIONS</a>
+        <a href="#" class="hover:text-slate-300">REFUNDS & SHIPPING</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize AOS on Scroll -->
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-cubic'
+    });
+  </script>
+
+</body>
+</html>
